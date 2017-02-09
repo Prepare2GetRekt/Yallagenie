@@ -62,10 +62,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingLeft: 40,
     paddingRight: 40,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   registerButton: {
-
+    width: 90
   },
   registerFirstText: {
     fontFamily: 'Avenir',

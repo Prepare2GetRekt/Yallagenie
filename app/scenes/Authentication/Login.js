@@ -37,26 +37,26 @@ export default class Login extends Component {
 
         <View style={styles.textForm}>
           <TextInput
-          style={styles.textInput}
-          onChangeText={(text) => this.setState({email: text})}
-          value={this.state.email}
-          placeholder="Email"
-          placeholderTextColor="#939db0"
-          autoCorrect={false}
-          returnKeyType="next"
-          autoCapitalize="none"
+            style={styles.textInput}
+            onChangeText={(text) => this.setState({email: text})}
+            value={this.state.email}
+            placeholder="Email"
+            placeholderTextColor="#939db0"
+            autoCorrect={false}
+            returnKeyType="next"
+            autoCapitalize="none"
           />
           <View style={styles.hairline} />
 
           <TextInput
-          style={styles.textInput}
-          onChangeText={(text) => this.setState({password: text})}
-          value={this.state.password}
-          placeholder="Password"
-          secureTextEntry={true}
-          placeholderTextColor="#939db0"
-          autoCorrect={false}
-          returnKeyType="done"
+            style={styles.textInput}
+            onChangeText={(text) => this.setState({password: text})}
+            value={this.state.password}
+            placeholder="Password"
+            secureTextEntry={true}
+            placeholderTextColor="#939db0"
+            autoCorrect={false}
+            returnKeyType="done"
           />
           <View style={styles.hairline} />
         </View>

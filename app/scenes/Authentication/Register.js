@@ -3,14 +3,15 @@ import {
   Text,
   View,
   StyleSheet,
-  TextInput
+  TextInput,
+  TouchableOpacity
 } from 'react-native'
 
 import ViewContainer from '../../components/ViewContainer'
 import StatusbarBackground from '../../components/StatusbarBackground'
 import { styles } from './styles'
 
-export default class Login extends Component {
+export default class Register extends Component {
   constructor(props) {
     super(props)
 
@@ -25,7 +26,28 @@ export default class Login extends Component {
     return (
       <ViewContainer>
       <StatusbarBackground />
-        <View>
+      <View style={styles.logo}>
+        <Text style={styles.logoText}>Yalla Genie</Text>
+      </View>
+
+      <View style={styles.headline}>
+        <Text style={styles.headlineText}>Hey Welcome!</Text>
+        <Text style={styles.subheadlineText}>Registration only takes 2 seconds</Text>
+      </View>
+
+        <View style={styles.textForm}>
+          <TextInput
+          style={styles.textInput}
+          onChangeText={(text) => this.setState({fullname: text})}
+          value={this.state.email}
+          placeholder="Full Name"
+          placeholderTextColor="#939db0"
+          autoCorrect={false}
+          returnKeyType="next"
+          autoCapitalize="none"
+          />
+          <View style={styles.hairline} />
+
           <TextInput
           style={styles.textInput}
           onChangeText={(text) => this.setState({email: text})}
@@ -33,6 +55,8 @@ export default class Login extends Component {
           placeholder="Email"
           placeholderTextColor="#939db0"
           autoCorrect={false}
+          returnKeyType="next"
+          autoCapitalize="none"
           />
           <View style={styles.hairline} />
 
@@ -44,10 +68,24 @@ export default class Login extends Component {
           secureTextEntry={true}
           placeholderTextColor="#939db0"
           autoCorrect={false}
+          returnKeyType="done"
           />
           <View style={styles.hairline} />
-
         </View>
+
+        <View style={styles.login}>
+          <TouchableOpacity style={styles.registerButton}>
+            <Text style={styles.loginText}>Sign up</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.register}>
+        <Text style={styles.registerFirstText}>Already have an account?</Text>
+          <TouchableOpacity style={styles.registerButton}>
+            <Text style={styles.registerText}> Sign in</Text>
+          </TouchableOpacity>
+        </View>
+
       </ViewContainer>
     )
   }
