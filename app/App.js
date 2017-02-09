@@ -4,18 +4,12 @@ import {
   View,
   StyleSheet
 } from 'react-native'
-import ViewContainer from './components/ViewContainer'
-import StatusbarBackground from './components/StatusbarBackground'
+import Login from './scenes/Authentication/Login'
 
 export default class App extends Component {
   render() {
     return (
-      <ViewContainer>
-      <StatusbarBackground />
-        <Text>
-          Dude
-        </Text>
-      </ViewContainer>
+      <Login />
     )
   }
 }

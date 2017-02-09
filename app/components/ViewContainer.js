@@ -5,7 +5,7 @@ import {
   StyleSheet
 } from 'react-native'
 
-export default class App extends Component {
+export default class ViewContainer extends Component {
   render() {
     return (
       <View style={styles.ViewContainer}>
@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'stretch',
-    backgroundColor: 'mistyrose'
+    backgroundColor: 'white'
   }
 })
