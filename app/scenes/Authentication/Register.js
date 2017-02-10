@@ -16,6 +16,7 @@ export default class Register extends Component {
     super(props)
 
     this.state = {
+      fullname: '',
       email: '',
       password: ''
     }
@@ -39,7 +40,7 @@ export default class Register extends Component {
           <TextInput
           style={styles.textInput}
           onChangeText={(text) => this.setState({fullname: text})}
-          value={this.state.email}
+          value={this.state.fullname}
           placeholder="Full Name"
           placeholderTextColor="#939db0"
           autoCorrect={false}
