@@ -10,7 +10,7 @@ The app has been well structured using proper conventions.
 - Custom Alerts based on error codes
 
 ### Current Screenshots
-![giphy](http://www.giphy.com/gifs/26xBvpEjcHrK3h3Z6)
+![giphy](https://media.giphy.com/media/26xBvpEjcHrK3h3Z6/giphy.gif)
 
 ### ToDo
 - Add a dashboard screen post login
