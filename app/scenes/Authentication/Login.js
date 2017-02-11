@@ -57,10 +57,9 @@ export default class Login extends Component {
 
       } else {
         alert("Successfully logged in!");
-
+        Actions.profile()
       }
     })
-    Actions.profile()
   }
 
   _register() {
