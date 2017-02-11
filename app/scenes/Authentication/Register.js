@@ -10,6 +10,10 @@ import {
 import ViewContainer from '../../components/ViewContainer'
 import StatusbarBackground from '../../components/StatusbarBackground'
 import { styles } from './styles'
+import Login from '../../scenes/Authentication/Login'
+import { firebaseRef } from '../../services/Firebase'
+import { Actions } from 'react-native-router-flux'
+
 
 export default class Register extends Component {
   constructor(props) {
@@ -20,6 +24,43 @@ export default class Register extends Component {
       email: '',
       password: ''
     }
+    this._register = this._register.bind(this)
+
+  }
+
+  _register() {
+    firebaseRef.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error){
+      if(error){
+        switch(error.code){
+
+          case "auth/email-already-in-use":
+            alert("This email is already in use");
+          break;
+
+          case "auth/invalid-email":
+            alert("The specified email is not a valid email.");
+          break;
+
+          case "auth/weak-password":
+          alert("You have entered a weak password, try again with a stronger one.");
+          break;
+
+          case "auth/operation-not-allowed":
+          alert("This account has been disabled. Please contact support@yallagenie.com");
+          break;
+
+          default:
+            alert("Error creating user");
+        }
+
+      } else {
+        alert("Your account was created!");
+      }
+    })
+  }
+
+  _login() {
+    Actions.login()
   }
 
 
@@ -76,14 +117,14 @@ export default class Register extends Component {
 
         <View style={styles.login}>
           <TouchableOpacity style={styles.registerButton}>
-            <Text style={styles.loginText}>Sign up</Text>
+            <Text style={styles.loginText} onPress={this._register}>Sign up</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.register}>
         <Text style={styles.registerFirstText}>Already have an account?</Text>
           <TouchableOpacity style={styles.registerButton}>
-            <Text style={styles.registerText}> Sign in</Text>
+            <Text style={styles.registerText} onPress={this._login}> Sign in</Text>
           </TouchableOpacity>
         </View>
 
